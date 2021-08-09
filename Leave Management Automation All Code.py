@@ -7,6 +7,9 @@
 import mysql.connector
         
 def main():
+
+    mydb = mysql.connector.connect(host=host_name, user=user_name, password=user_password ,db=db_name)
+    
     maincursor = mydb.cursor()
     maincursor.execute("SELECT * FROM casual_leave_application where status IS NULL ORDER BY leave_id ASC");
     
